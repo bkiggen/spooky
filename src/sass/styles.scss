@@ -1,0 +1,256 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 10% auto 10%;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+header {
+  grid-area: 1 / 1 / span 1 / span 3;
+  background-color: lightblue;
+}
+
+.full-width-nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: baseline;
+  padding-top: 1em;
+}
+
+.menu {
+  img {
+    width: 3em;
+  }
+}
+
+.company-name {
+  h1 {
+    font-size: 2em;
+  }
+}
+
+.logo {
+  img {
+    width: 3em;
+  }
+}
+
+ul {
+  display: none;
+}
+
+.main-content {
+  grid-area: 2 / 1 / span 1 / span 3;
+}
+
+.landing-text {
+  display: none;
+}
+
+.main-image-container {
+  text-align: center;
+  position: relative;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .main-image-overlay {
+    position: absolute;
+    background-color: white;
+    opacity: .6;
+    bottom: .5%;
+    width: 100%;
+
+  }
+}
+
+.help-text {
+  text-align: center;
+}
+
+.option-box-container {
+  width: 100%;
+  justify-content: center;
+  margin: 0 auto;
+  .option {
+    text-align: center;
+    margin: .5em;
+    border: 1px solid black;
+    img {
+      width: 9vw;
+    }
+  }
+}
+
+.button {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  button {
+    width: 95%;
+    height: 3em;
+  }
+}
+
+.big-news-div {
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.news-div-1 {
+  border: 1px solid black;
+
+}
+
+.news-image {
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.news-div-2 {
+  display: none;
+}
+
+footer {
+  grid-area: 3 / 1 / span 1 / span 3;
+  background-color: lightblue;
+}
+
+.full-width-footer {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.footer-logo {
+  display: none;
+}
+
+.footer-hours {
+}
+
+.email-list {
+  display: none;
+  text-align: center;
+}
+
+.footer-social-links {
+  display: none;
+}
+
+
+//Media Queries
+
+//Tablet-Home
+
+@media screen and (min-width: 768px) {
+  .option-box-container {
+    display: flex;
+  }
+  .button {
+    display: none;
+  }
+}
+
+
+//Desktop-Home
+@media screen and (min-width: 1024px) {
+  .menu {
+    display: none;
+  }
+
+  .company-name {
+    order: 2;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .nav-links {
+    width: 40%;
+    order: 3;
+    ul {
+      display: flex;
+      list-style: none;
+      justify-content: space-between;
+    }
+  }
+
+.landing-container {
+  display: flex;
+  height: 18em;
+  margin-top: 1em;
+}
+
+.landing-text {
+  display: block;
+  text-align: center;
+  width: 120em;
+  margin-right: 1em;
+}
+
+.main-image-overlay {
+  display: none;
+}
+
+  .button {
+    display: none;
+  }
+
+
+  .big-news-div {
+    display: flex;
+    h2 {
+      display: none;
+    }
+  }
+
+  .news-div-1 {
+    display: flex;
+    margin-right: 1em;
+    .news-image {
+      order: 1;
+    }
+    .news-text {
+      order: 2;
+    }
+  }
+
+  .news-div-2 {
+    display: flex;
+    border: 1px solid black;
+    .news-image {
+      order: 1;
+      img {
+        width: 100%;
+      }
+    }
+    .news-text {
+      order: 2;
+    }
+  }
+
+  .email-list {
+    display: block;
+  }
+
+  .footer-social-links {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    height: auto;
+    justify-content: space-between;
+    i {
+      font-size: 2.5em;
+    }
+  }
+}
