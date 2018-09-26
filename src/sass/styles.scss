@@ -1,0 +1,99 @@
+body {
+  background-color: black;
+}
+
+.container {
+  position: relative;
+  height: 924px;
+  width: 1297px;
+  overflow: hidden;
+}
+
+.background {
+
+}
+
+.foreground {
+  position: absolute;
+  bottom: 0;
+  transform: scaleY(1.1);
+}
+
+.hands {
+  display: flex;
+  justify-content: space-around;
+  width: 1380px;
+}
+
+.hand1, .hand2 {
+  animation: move-up 4s;
+  animation-fill-mode: forwards;
+}
+
+.hand1 {
+  animation-delay: 1s;
+}
+
+.hand3 {
+  animation: move-up3 4s;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+
+.mask {
+  background-color: black;
+  position: absolute;
+  top: 920px;
+  height: 800px;
+  width: 100%;
+}
+
+.bat {
+  position: absolute;
+  top: 50px;
+  left: -300px;
+  animation: move-across 6s;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+}
+
+.bat:hover {
+  animation-play-state: paused;
+  // animation-direction: reverse;
+
+}
+
+@keyframes move-up{
+  100% {
+    transform: translateY(-400px);
+  }
+}
+@keyframes move-up3{
+  100% {
+    transform: translateY(-300px);
+  }
+}
+
+@keyframes move-across{
+  0%{
+    top: 250px;
+  }
+  25%{
+    top: 25px;
+  }
+  50% {
+    top: 250px;
+  }
+  75% {
+    top: 25px;
+  }
+  100% {
+    top: 250px;
+    left: 1400px;
+  }
+}
+
+p {
+  color: white;
+  z-index: 1;
+}
