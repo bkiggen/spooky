@@ -20,32 +20,41 @@ body {
 }
 
 .hands {
-  display: flex;
-  justify-content: space-around;
+  // display: flex;
+  // justify-content: space-around;
   width: 1380px;
 }
 
 .hand1, .hand2 {
+
+}
+
+.hand1 {
+  bottom: -400px;
+  left: 300px;
+  position: absolute;
+  animation-delay: 1s;
   animation: move-up 4s;
   animation-fill-mode: forwards;
 }
 
-.hand1 {
+.hand2 {
+  bottom: -500px;
+  left: 500px;
+  position: absolute;
   animation-delay: 1s;
+  animation: move-up 4s;
+  animation-fill-mode: forwards;
 }
+
 
 .hand3 {
-  animation: move-up3 4s;
-  animation-fill-mode: forwards;
-  animation-delay: 2s;
-}
-
-.mask {
-  background-color: black;
+  bottom: -400px;
+  left: 1000px;
   position: absolute;
-  top: 920px;
-  height: 800px;
-  width: 100%;
+  animation-delay: 1s;
+  animation: move-up 4s;
+  animation-fill-mode: forwards;
 }
 
 .bat {
@@ -54,14 +63,26 @@ body {
   left: -300px;
   animation: move-across 6s;
   animation-fill-mode: forwards;
-  animation-delay: 3s;
+  // animation-delay: 3s;
 }
 
-.bat:hover {
-  animation-play-state: paused;
-  // animation-direction: reverse;
-
+.horse {
+  position: absolute;
+  bottom: -50px;
+  left: -500px;
+  animation: horse 6s;
+  animation-fill-mode: forwards;
+  animation-delay: 6s;
 }
+
+.stop {
+  animation: none;
+}
+
+.nopoint {
+  pointer-events: none;
+}
+
 
 @keyframes move-up{
   100% {
@@ -90,6 +111,13 @@ body {
   100% {
     top: 250px;
     left: 1400px;
+  }
+}
+
+
+@keyframes horse {
+  100% {
+    left: 900px;
   }
 }
 
