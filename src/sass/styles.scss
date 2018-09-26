@@ -19,32 +19,18 @@ body {
   transform: scaleY(1.1);
 }
 
-.hands {
-  // display: flex;
-  // justify-content: space-around;
-  width: 1380px;
-}
-
-.hand1, .hand2 {
-
-}
-
 .hand1 {
   bottom: -400px;
   left: 300px;
   position: absolute;
-  animation-delay: 1s;
-  animation: move-up 4s;
-  animation-fill-mode: forwards;
+  animation-delay: 3s;
 }
 
 .hand2 {
   bottom: -500px;
   left: 500px;
   position: absolute;
-  animation-delay: 1s;
-  animation: move-up 4s;
-  animation-fill-mode: forwards;
+  animation-delay: 2s;
 }
 
 
@@ -53,6 +39,9 @@ body {
   left: 1000px;
   position: absolute;
   animation-delay: 1s;
+}
+
+.hand1-move, .hand2-move, .hand3-move {
   animation: move-up 4s;
   animation-fill-mode: forwards;
 }
@@ -61,15 +50,21 @@ body {
   position: absolute;
   top: 50px;
   left: -300px;
+}
+
+.bat-move {
   animation: move-across 6s;
   animation-fill-mode: forwards;
-  // animation-delay: 3s;
+  animation-delay: 3s;
 }
 
 .horse {
   position: absolute;
   bottom: -50px;
   left: -500px;
+}
+
+.horse-move {
   animation: horse 6s;
   animation-fill-mode: forwards;
   animation-delay: 6s;
@@ -85,19 +80,19 @@ body {
 
 
 @keyframes move-up{
+  0%{
+    transform: translateY(0px);
+  }
   100% {
     transform: translateY(-400px);
   }
 }
-@keyframes move-up3{
-  100% {
-    transform: translateY(-300px);
-  }
-}
+
 
 @keyframes move-across{
   0%{
     top: 250px;
+    left: -300px;
   }
   25%{
     top: 25px;
@@ -116,12 +111,12 @@ body {
 
 
 @keyframes horse {
+  0%{
+    top: 500px;
+    left: -500px;
+  }
   100% {
     left: 900px;
+    top: 500px;
   }
-}
-
-p {
-  color: white;
-  z-index: 1;
 }
