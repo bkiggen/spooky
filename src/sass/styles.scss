@@ -20,14 +20,14 @@ body {
 }
 
 .hand1 {
-  bottom: -400px;
+  top: 1000px;
   left: 300px;
   position: absolute;
   animation-delay: 3s;
 }
 
 .hand2 {
-  bottom: -500px;
+  top: 1000px;
   left: 500px;
   position: absolute;
   animation-delay: 2s;
@@ -35,15 +35,31 @@ body {
 
 
 .hand3 {
-  bottom: -400px;
+  top: 1000px;
   left: 1000px;
   position: absolute;
   animation-delay: 1s;
 }
 
-.hand1-move, .hand2-move, .hand3-move {
-  animation: move-up 4s;
+.hand1-move{
+  animation: move-up1 4s;
   animation-fill-mode: forwards;
+  top: 1000px;
+  left: 300px;
+}
+
+.hand2-move{
+  animation: move-up2 4s;
+  animation-fill-mode: forwards;
+  top: 1000px;
+  left: 500px;
+}
+
+.hand3-move {
+  animation: move-up3 4s;
+  animation-fill-mode: forwards;
+  top: 1000px;
+  left: 1000px;
 }
 
 .bat {
@@ -53,9 +69,10 @@ body {
 }
 
 .bat-move {
-  animation: move-across 6s;
+  animation: move-across 8s;
   animation-fill-mode: forwards;
   animation-delay: 3s;
+  animation-iteration-count: infinite;
 }
 
 .horse {
@@ -67,7 +84,20 @@ body {
 .horse-move {
   animation: horse 6s;
   animation-fill-mode: forwards;
-  animation-delay: 6s;
+  animation-delay: 4s;
+}
+
+.spider {
+  position: absolute;
+  left: 110px;
+  top: 1000px;
+}
+
+.spider-move {
+  animation: move-up-spider 4s;
+  animation-fill-mode: forwards;
+  left: 110px;
+  top: 1000px;
 }
 
 .stop {
@@ -78,13 +108,54 @@ body {
   pointer-events: none;
 }
 
+.scorebox {
+  width: 150px;
+  height: 50px;
+  background-color: #113660;
+  color: white;
+  text-align: center;
+  border: 8px solid #072237;
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
 
-@keyframes move-up{
+@keyframes move-up-spider{
   0%{
-    transform: translateY(0px);
+
   }
   100% {
-    transform: translateY(-400px);
+    top: 680px;
+  }
+}
+
+
+
+@keyframes move-up1{
+  0%{
+
+  }
+  100% {
+    top: 600px;
+  }
+}
+
+@keyframes move-up2{
+  0%{
+
+  }
+  100% {
+    top: 500px;
+  }
+}
+
+@keyframes move-up3{
+  0%{
+
+  }
+  100% {
+    top: 700px;
   }
 }
 
