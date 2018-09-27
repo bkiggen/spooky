@@ -1,5 +1,6 @@
 body {
   background-color: black;
+  cursor: url("../../assets/images/flashlight.png"), auto;
 }
 
 .container {
@@ -145,11 +146,48 @@ body {
 .game-over {
   display: none;
   font-size: 80px;
-  color: red;
+  color: #E12836;
   position: absolute;
   top: 170px;
   left: 433px;
 }
+
+.play-again {
+  display: none;
+  width: 150px;
+  height: 50px;
+  background-color: #468CBD;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 5px;
+  position: absolute;
+  top: 420px;
+  left: 600px;
+  p {
+    margin-top: 15px;
+  }
+  animation: pulse 1s infinite;
+}
+
+.circle
+{
+  opacity: 1;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  background: radial-gradient(rgba(255,255,255,0.4), rgba(200,200,200,0), rgba(150,150,150,0));
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  50% {
+    // box-shadow: 2px 2px 20px 10px #113660, -2px -2px 20px 10px #113660;
+    // color: #113660;
+    background-color: lighten(#468CBD, 10);
+  }
+}
+
 
 @keyframes move-up-spider{
   0%{

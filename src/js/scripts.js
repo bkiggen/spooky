@@ -65,14 +65,20 @@ $(document).ready(function(){
   var healthDrop = setInterval(function() {
     var healthbar = document.getElementById("healthbar").getBoundingClientRect();
     var healthwidth = healthbar.width;
-    console.log(healthwidth);
     if (healthwidth > 0){
       $(".healthbar").animate({
-        width: "-=60px"
+        width: "-=6px"
       }, 1000, function(){
       });
     } else {
       $(".game-over").show();
+      $(".horse").hide();
+      $(".bat").hide();
+      $(".spider").hide();
+      $(".hand1").hide();
+      $(".hand2").hide();
+      $(".hand3").hide();
+      $(".play-again").fadeIn();
       clearInterval(healthDrop);
       $(".scorebox").animate({
         top: 350,
@@ -81,7 +87,9 @@ $(document).ready(function(){
       });
     }
   }, 1000);
-
+  $(".play-again").click(function(){
+    location.reload();
+  })
   function drop(idname, className){
     var rect = idname.getBoundingClientRect();
     $("." + className).addClass("stop");
@@ -107,4 +115,18 @@ $(document).ready(function(){
     var choice = chooseSpooky();
     $("." + choice).addClass(choice + "-move");
   }, 1000);
+
+  $(document).on('mousemove', function(e){
+      $('#circle').css({
+         left:  e.pageX - 200,
+         top:   e.pageY - 200
+      });
+  });
+
+
+
+
+
+
+
 });
