@@ -25,6 +25,8 @@ body {
   left: 300px;
   position: absolute;
   animation-delay: 1s;
+  height: 300px;
+  width: 180px;
 }
 
 .hand2 {
@@ -32,6 +34,8 @@ body {
   left: 500px;
   position: absolute;
   animation-delay: 2s;
+  height: 500px;
+  width: 300px;
 }
 
 
@@ -40,27 +44,33 @@ body {
   left: 1000px;
   position: absolute;
   animation-delay: 1s;
+  height: 200px;
+  width: 180px;
 }
 
 .hand1-move{
-  animation: move-up1 4s;
+  animation: move-up1 infinite;
+  animation-duration: 7000ms;
   animation-fill-mode: forwards;
   top: 1000px;
   left: 300px;
 }
 
 .hand2-move{
-  animation: move-up2 4s;
+  animation: move-up2 infinite;
+  animation-duration: 8000ms;
   animation-fill-mode: forwards;
   top: 1000px;
   left: 500px;
 }
 
 .hand3-move {
-  animation: move-up3 4s;
+  animation: move-up3 infinite;
+  animation-duration: 8000ms;
   animation-fill-mode: forwards;
   top: 1000px;
   left: 1000px;
+
 }
 
 .bat {
@@ -70,7 +80,8 @@ body {
 }
 
 .bat-move {
-  animation: move-across 8s;
+  animation: move-across;
+  animation-duration: 8000ms;
   animation-fill-mode: forwards;
   animation-delay: 1s;
   animation-iteration-count: infinite;
@@ -83,7 +94,8 @@ body {
 }
 
 .horse-move {
-  animation: horse 6s;
+  animation: horse infinite;
+  animation-duration: 6000ms;
   animation-fill-mode: forwards;
   animation-delay: 2s;
 }
@@ -95,7 +107,8 @@ body {
 }
 
 .spider-move {
-  animation: move-up-spider 4s;
+  animation: move-up-spider infinite;
+  animation-duration: 11000ms;
   animation-fill-mode: forwards;
   left: 110px;
   top: 1000px;
@@ -170,6 +183,9 @@ body {
   animation: pulse 1s infinite;
 }
 
+.play-again:hover {
+  background-color: #E12836;
+}
 .circle
 {
   opacity: 1;
@@ -179,6 +195,29 @@ body {
   background: radial-gradient(rgba(255,255,255,0.4), rgba(200,200,200,0), rgba(150,150,150,0));
   pointer-events: none;
 }
+
+.landing-button {
+  width: 250px;
+  height: 100px;
+  font-size: 80px;
+  text-align: center;
+  border-radius: 5px;
+  position: absolute;
+  top: 130px;
+  left: 550px;
+  font-family: 'Creepster', cursive;
+}
+
+.landing-screen {
+  width: 100%;
+  height: 100%;
+  background-color: darken(rgba(190, 255, 0, 0.5), 30);
+  position: absolute;
+  z-index: 1;
+}
+
+
+
 
 @keyframes pulse {
   50% {
@@ -193,7 +232,7 @@ body {
   0%{
 
   }
-  100% {
+  25% {
     top: 680px;
   }
 }
@@ -204,7 +243,7 @@ body {
   0%{
 
   }
-  100% {
+  25% {
     top: 600px;
   }
 }
@@ -213,7 +252,7 @@ body {
   0%{
 
   }
-  100% {
+  25% {
     top: 500px;
   }
 }
@@ -222,7 +261,7 @@ body {
   0%{
 
   }
-  100% {
+  25% {
     top: 700px;
   }
 }
@@ -255,7 +294,7 @@ body {
     left: -500px;
   }
   100% {
-    left: 900px;
+    left: 1500px;
     top: 500px;
   }
 }

@@ -12,13 +12,15 @@ function chooseSpooky() {
 
 //FRONT END
 $(document).ready(function(){
+$('.landing-screen').click(function(){
+  $('.landing-screen').fadeOut();
   var score = 0;
   $(".score").text(score);
   $(".spider").click(function(){
     var elementInfo = document.getElementById("spider");
     var elementName = "spider";
     drop(elementInfo, elementName);
-    score += 1;
+    score += 3;
     $(".score").text(score);
   });
 
@@ -63,6 +65,7 @@ $(document).ready(function(){
   });
 
   var healthDrop = setInterval(function() {
+    $(".hand1-move, .hand2-move, .hand3-move, .spider-move, .horse-move, .bat-move").css("animation-duration", "-=50ms");
     var healthbar = document.getElementById("healthbar").getBoundingClientRect();
     var healthwidth = healthbar.width;
     if (healthwidth > 0){
@@ -87,14 +90,16 @@ $(document).ready(function(){
       });
     }
   }, 1000);
+
   $(".play-again").click(function(){
     location.reload();
-  })
+  });
+
   function drop(idname, className){
     var rect = idname.getBoundingClientRect();
     $("." + className).addClass("stop");
     var left = rect.left - 8;
-    var top = rect.top;
+    var top = rect.top + 5;
     $("." + className).animate({
       top: top,
       left: left
@@ -115,6 +120,7 @@ $(document).ready(function(){
     var choice = chooseSpooky();
     $("." + choice).addClass(choice + "-move");
   }, 1000);
+});
 
   $(document).on('mousemove', function(e){
       $('#circle').css({
