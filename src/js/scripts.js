@@ -10,7 +10,7 @@ function chooseSpooky() {
 
 
 
-
+//FRONT END
 $(document).ready(function(){
   var score = 0;
   $(".score").text(score);
@@ -61,6 +61,26 @@ $(document).ready(function(){
     score += 1;
     $(".score").text(score);
   });
+
+  var healthDrop = setInterval(function() {
+    var healthbar = document.getElementById("healthbar").getBoundingClientRect();
+    var healthwidth = healthbar.width;
+    console.log(healthwidth);
+    if (healthwidth > 0){
+      $(".healthbar").animate({
+        width: "-=60px"
+      }, 1000, function(){
+      });
+    } else {
+      $(".game-over").show();
+      clearInterval(healthDrop);
+      $(".scorebox").animate({
+        top: 350,
+        left: 600
+      }, 500, function(){
+      });
+    }
+  }, 1000);
 
   function drop(idname, className){
     var rect = idname.getBoundingClientRect();
